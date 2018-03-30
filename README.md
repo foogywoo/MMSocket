@@ -26,7 +26,7 @@ Run _carthage update_ to build the framework and drag the built MMSocket.framewo
 class ExamplePayload : Codable {
   var aString : String = ""
   public init(withString aString: String) {
-  self.aString = aString
+    self.aString = aString
   }
 }
 	
