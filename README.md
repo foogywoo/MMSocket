@@ -13,7 +13,7 @@ I created this simple framework for a project in which I needed to exchange some
 * No external dependencies
 
 ## Installation
-### Cartage
+### Carthage
 To integrate MMSocket into your Xcode project using Carthage, specify it in your Cartfile:
 
 `github "MMSocket/MMSocket" ~> 1.0`
