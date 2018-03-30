@@ -20,15 +20,15 @@ class ViewController: UIViewController {
     let bonjourConfig = MMBonjourConfig(domain: "local.", type: "_mmtest._tcp.", name: "mmtest")
     do {
       try self.socketClient.connectTo(withBonjourConfig: bonjourConfig, closeHandler: self.closeHandler) {
-        
+
         print("connected to appleTV!")
-        
+
         //send some data
         let payload = ExamplePayload(withString: "a simple string payload")
         let packet = MMPacket<ExamplePayload>(PacketType.ExamplePacket.rawValue, withPayload: payload)
         let packedData = packet.asData()
         print(String(data: packedData, encoding: .utf8)!)
-        
+
         try? self.socketClient.sendData(packedData)
         do {
           try self.socketClient.startReceiving() { receiving_client in
@@ -45,6 +45,8 @@ class ViewController: UIViewController {
     } catch {
       print("could not connect: unhandled error")
     }
+
+    
   }
 
   func closeHandler() {

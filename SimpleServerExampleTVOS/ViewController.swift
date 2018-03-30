@@ -61,10 +61,11 @@ class ViewController: UIViewController {
     } catch {
       print("fail to start receiving: unhandled error")
     }
-    
+
     print("Listening on port \(socketServer.port)")
 
   }
+  
 
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
