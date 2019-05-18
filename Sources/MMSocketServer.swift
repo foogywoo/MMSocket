@@ -59,9 +59,9 @@ public class MMSocketServer {
       ptr in _ = ptr.withMemoryRebound(to: sockaddr.self, capacity: 1) { ptrSockAddr in
         getsockname(sock_fd, UnsafeMutablePointer(ptrSockAddr), &server_addr_size)
       }
-      
-      self.port = UInt16(bigEndian:server_addr.sin_port)
     }
+    
+    self.port = UInt16(bigEndian:server_addr.sin_port)
     
     if listen(self.sock_fd, 1) == -1 {
       self.stop()
